@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Free Chess Analysis",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "scripting",
+        "activeTab",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_icon": "images/icon.png"
+    },
+    "host_permissions": [
+        "https://chess.com/game/*",
+        "https://chess.wintrcat.uk/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://chess.com/game/*"],
+            "js": ["scripts/content.chesscom.js"]
+        },
+        {
+            "matches": ["https://chess.wintrcat.uk/*"],
+            "js": ["scripts/content.freechess.js"]
+        }
+    ]
+}

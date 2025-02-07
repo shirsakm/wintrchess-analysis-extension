@@ -1,6 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Free Chess Analysis",
+    "name": "WintrChess Redirect",
+    "description": "Redirects chess.com games to WintrChess for free analysis.",
     "version": "0.1.1",
     "permissions": [
         "tabs",

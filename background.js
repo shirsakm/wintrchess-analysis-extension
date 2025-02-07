@@ -6,10 +6,8 @@ chrome.action.onClicked.addListener(async (tab) => {
             target: { tabId: tab.id },
             files: ['scripts/content.chesscom.js']
         });
-
-        console.log("Data extraction started!");
     } else {
-        console.log("This only works on Website 1!");
+        console.log("Not on chess.com, navigate to a game and try again.");
     }
 });
 

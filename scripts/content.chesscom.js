@@ -1,26 +1,13 @@
-// Collect data
-const moves = document.getElementsByClassName('move-list-row');
-let result = moves[moves.length - 1].getElementsByTagName('span')[0].innerText;
+// Navigate to PGN tab
+const shareBtn = document.querySelector(".share");
+shareBtn.click();
 
-let pgn = '';
+const pgnTab = document.querySelector(".share-menu-tab-selector-tab");
+pgnTab.click();
 
-for (let i = 0; i < moves.length - 1; i++) {
-    move_number = (i + 1) + '.';
-    white_move = moves[i].getElementsByTagName('span')[0].innerText;
-    try {
-        black_move = moves[i].getElementsByTagName('span')[1].innerText;
-    } catch (error) {
-        black_move = null;
-    }
+// Extract PGN
+const pgn = document.querySelector(".share-menu-tab-pgn-textarea").value;
 
-    if (black_move === null) {
-        pgn += move_number + ' ' + white_move + ' ';
-    } else {
-        pgn += move_number + ' ' + white_move + ' ' + black_move + ' ';
-    }
-}
-
-pgn += result;
 
 // Send to background script
 chrome.runtime.sendMessage({
